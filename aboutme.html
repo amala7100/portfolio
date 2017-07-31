@@ -41,10 +41,16 @@ div.tab button.active {
     border-top: none;
 }
 </style>
-    <title>About Me Page</title>
+    <title>Amala's Website!</title>
   </head>
   <body>
-   
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">About Me</button>
+  <button class="tablinks" onclick="openTab(event, 'Interests')"> Likes & Dislikes </button>
+  <button class="tablinks" onclick="openTab(event, 'Projects')"> Projects </button>
+  <button class="tablinks" onclick="openTab(event, 'Favorite')"> Favorite Websites!</button>
+</div>
+    
     <h1>Amala Akkiraju's Portfolio</h1>
     <h2>A little about ME...</h2>
       <img scr="profilepic.jpg"/>
@@ -69,6 +75,25 @@ div.tab button.active {
         <a href="https://www.reddit.com/">Reddit</a>
         <a href="https://www.youtube.com/">Youtube</a>
       </ul>
+    
+<script>
+function openTab(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
    
   </body>
  </html>
